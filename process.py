@@ -15,3 +15,23 @@ data = data[~((data.SUM_YR_1.isin([0]))|(data.SUM_YR_2.isin([0]))|(data.avg_disc
 直接筛掉两万多条"""
 #print(data.isnull().any())
 #print(data.isnull().sum())
+#选择所需的列
+data_need = data[['FFP_DATE','LOAD_TIME','FLIGHT_COUNT','SEG_KM_SUM','LAST_TO_END','avg_discount']]
+#print(data_need.head(5))
+#print(data_need.dtypes)
+"""
+FFP_DATE         object
+LOAD_TIME        object
+FLIGHT_COUNT      int64
+SEG_KM_SUM        int64
+LAST_TO_END       int64
+avg_discount    float64
+dtype: object
+时间是对象类型，格式为 年/月/日"""
+#转换类型，助于下一步的处理
+data_need.FFP_DATE = pd.to_datetime(data_need.FFP_DATE)
+data_need.LOAD_TIME =pd.to_datetime(data_need.LOAD_TIME)
+#DataFrame对象.任意列可以选择这一列的所有数据
+#pd.to_datetime()可以将格式正确的对象转换为datatime64[ns]类对象
+#print(data_need.head(5))
+#print(data_need.dtypes)
