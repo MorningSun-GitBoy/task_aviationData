@@ -42,3 +42,8 @@ data_need['LL'] = data_need['LOAD_TIME'] - data_need['FFP_DATE']
 data_need['LL'] = data_need['LL'].apply(lambda x:int(x.days))
 #print(data_need.dtypes)
 #print(data_need.head(5))
+data_op = data_need[['FFP_DATE','LOAD_TIME','FLIGHT_COUNT','SEG_KM_SUM','LAST_TO_END','avg_discount','LL']]
+#print(data_op.describe())
+#print(data_op.head(3))
+data_op.columns = ['FFP','LOAD','F','M','R','C','L']
+print(data_op.head(3))
