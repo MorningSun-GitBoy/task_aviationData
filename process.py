@@ -35,3 +35,10 @@ data_need.LOAD_TIME =pd.to_datetime(data_need.LOAD_TIME)
 #pd.to_datetime()可以将格式正确的对象转换为datatime64[ns]类对象
 #print(data_need.head(5))
 #print(data_need.dtypes)
+data_need['LL'] = data_need['LOAD_TIME'] - data_need['FFP_DATE']
+#没有某列时DataFrame['列名']会创造新的列
+#datetime64[ns]相减后会得到一个timedelta64[ns]类的对象
+#将'LL'中的数据转换为int类型
+data_need['LL'] = data_need['LL'].apply(lambda x:int(x.days))
+#print(data_need.dtypes)
+#print(data_need.head(5))
