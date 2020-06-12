@@ -11,6 +11,12 @@ pip install pandas
 ```
 pip install numpy
 ```
+* sklearn
+```
+pip install scipy
+pip install scikit-learn
+```
 ## 主要方法（main method）
 * 聚类分析（Cluster analysis）
-* RFM模型（RMF ）
+* RFM模型（RMF Model）
+* * RFMCL
