@@ -51,4 +51,4 @@ data_op.columns = ['FFP','LOAD','F','M','R','C','L']
 #print(data_op.head(3))
 #数据标准化
 #将A的一个原始值x通过min-max标准化映射成在区间[0,1]中的值x'，公式：新数据=（原数据-最小值）/（最大值-最小值）
-data_op_s = data_op[['F','M','R','C','L'].apply(lambda x: (x-np.min(x))/ (np.max(x)-np.min(x)))]
+data_op_s = data_op[['F','M','R','C','L']].apply(lambda x: (x-np.min(x))/ (np.max(x)-np.min(x)))
