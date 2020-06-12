@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+
 data = pd.read_csv('air_data.csv',sep=',',encoding='utf-8')
 #清洗数据
 #将SUM_YR_1=0或SUM_YR_2=0或avg_discount=0的数据
@@ -47,3 +49,6 @@ data_op = data_need[['FFP_DATE','LOAD_TIME','FLIGHT_COUNT','SEG_KM_SUM','LAST_TO
 #print(data_op.head(3))
 data_op.columns = ['FFP','LOAD','F','M','R','C','L']
 #print(data_op.head(3))
+#数据标准化
+#将A的一个原始值x通过min-max标准化映射成在区间[0,1]中的值x'，公式：新数据=（原数据-最小值）/（最大值-最小值）
+data_op_s = data_op[['F','M','R','C','L'].apply(lambda x: (x-np.min(x))/ (np.max(x)-np.min(x)))]
