@@ -7,6 +7,10 @@
 pip install pandas
 ```
 ![](pipInstall.png)
+* numpy
+```
+pip install numpy
+```
 ## 主要方法（main method）
 * 聚类分析（Cluster analysis）
 * RFM模型（RMF ）

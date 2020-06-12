@@ -46,4 +46,4 @@ data_op = data_need[['FFP_DATE','LOAD_TIME','FLIGHT_COUNT','SEG_KM_SUM','LAST_TO
 #print(data_op.describe())
 #print(data_op.head(3))
 data_op.columns = ['FFP','LOAD','F','M','R','C','L']
-print(data_op.head(3))
+#print(data_op.head(3))
