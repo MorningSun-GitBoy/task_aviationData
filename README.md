@@ -20,3 +20,5 @@ pip install scikit-learn
 * 聚类分析（Cluster analysis）
 * RFM模型（RMF Model）
 * * RFMCL
+## 问题（issue）
+* 如果出现“ModuleNotFoundError: No module named 'openpyxl'”的问题，请重新安装openpyxl ：pip install openpyxl
