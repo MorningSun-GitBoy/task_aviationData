@@ -16,6 +16,10 @@ pip install numpy
 pip install scipy
 pip install scikit-learn
 ```
+* matplotlib
+```
+pip install matplotlib
+```
 ## 主要方法（main method）
 * 聚类分析（Cluster analysis）
 * RFM模型（RMF Model）
