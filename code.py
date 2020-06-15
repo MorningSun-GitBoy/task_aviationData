@@ -1,6 +1,8 @@
 import pandas as pd 
 import numpy as np
 from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt 
 
 table = pd.read_csv("air_data.csv",sep=",",encoding="utf-8")
 #print(table.head(5))
@@ -36,3 +38,14 @@ r.to_excel("clusterCenter.xlsx")
 result = pd.Series(KM_models.labels_,index=table_final_s.index)
 cluster_result = pd.concat([table_final_s,result],axis=1)
 cluster_result.to_excel("result.xlsx")
+pca = PCA(n_components=2)
+data = pd.DataFrame(pca.fit_transform(table_final_s))
+d = data[KM_models.labels_==0]
+plt.plot(d[0],d[1],'r*')            #红色
+d = data[KM_models.labels_==1]
+plt.plot(d[0],d[1],'go')            #绿色
+d = data[KM_models.labels_==2]
+plt.plot(d[0],d[1],'b+')            #蓝色
+d = data[KM_models.labels_==3]
+plt.plot(d[0],d[1],'k+')            #黑色
+plt.show()
