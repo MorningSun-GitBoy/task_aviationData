@@ -24,5 +24,16 @@ pip install matplotlib
 * 聚类分析（Cluster analysis）
 * RFM模型（RMF Model）
 * * RFMCL
+```
+R:上次购票距今的时间
+F:飞行频次
+M:飞行公里数
+C:综合的折扣率
+L:入会的时间
+```
 ## 问题（issue）
 * 如果出现“ModuleNotFoundError: No module named 'openpyxl'”的问题，请重新安装openpyxl ：pip install openpyxl
+## branch
+* master
+* preshow
+* show
